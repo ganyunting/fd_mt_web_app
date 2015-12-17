@@ -1,0 +1,23 @@
+﻿<ion-view title="活动">
+	<ion-nav-buttons side="right">
+      <a style="cursor:pointer;margin-top:10px;" ng-click="publishact()">
+         发布
+      </a>
+    </ion-nav-buttons>
+    <ion-content padding="true">
+		<ion-item ng-show="noacts">还没有活动哦，去发布一个吧</ion-item>
+		<ion-list >
+			<div ng-repeat="act in acts"   style="margin-bottom:40px;">
+				<a href="#/tab/activity/{{act.index}}" style="text-decoration: none;">
+				  <img ng-src="{{shoppic}}@500w_500h_1e_1l_1c" style="width:100%;height:50%;" ></img>
+				  <img ng-src="img/Activity_03.png" ng-if="act.end_time > now" style="z-index:999;position:absolute;margin-top:-56%;"></img>
+				  <img ng-src="img/Activity_07.png" ng-if="act.end_time < now"></img>
+				  
+				  <h1 style="margin-top:-90px;color:#fff;position:absolute">{{act.act_title}}</h1>
+				  <p style="color:#fff;margin-top:-50px;"><img ng-src="img/Activity_15.png" style="width:1.3em"></img>{{act.begin_time |substr10}}至{{act.end_time |substr10}}</p>
+				 </a> 
+				<img ng-src="img/delete.png" ng-if="act.end_time < now" style="position:absolute;right:5px;margin-top:-35%;z-index:999;" ng-click="deleteact(act.act_id)"></img>
+			</div>  
+		</ion-list>
+    </ion-content>
+</ion-view>

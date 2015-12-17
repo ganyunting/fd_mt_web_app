@@ -1,0 +1,44 @@
+﻿<ion-view title="商品" ng-controller="saleCtrl">
+	<ion-nav-buttons side="right">
+      <a style="cursor:pointer;margin-top:10px;" ng-click="publishgoods()">
+         发布
+      </a>
+     </ion-nav-buttons>
+	 
+	<ion-tabs class="tabs-mtweb tabs-top">
+				 <ion-tab title="上架商品"  on-select="geton()" >
+					<ion-nav-view name="onsale-tab">
+						<ion-content class="content1">
+						<!-- ion-item ng-if="nogoods">没有上架商品哦，快去发布一个吧</ion-item -->
+							<ion-list can-swipe="true">
+								<ion-item ng-repeat="goods in ongoods"   item-height="180px" href="#/tab/sale/{{goods.goods_id}}" class="item-thumbnail-left">
+									<img ng-src="{{goods.pic_url_list[0]}}@200w_200h_0e_1l">
+									<h2>{{goods.description}}</h2>
+									<p><span ng-if="!goods.promotion_price"><a ng-if="goods.price">￥</a>{{goods.price}}</span><span ng-if="goods.promotion_price">￥{{goods.promotion_price}}</span></p>
+									<ion-option-button class="button button-royal button-large" ng-click="unsaleit(goods.goods_id)">　下架　</ion-option-button>
+									<ion-option-button class="button button-assertive button-large" ng-click="deletegood(goods.goods_id)">　删除　</ion-option-button>
+								</ion-item>
+								
+							</ion-list>	
+						</ion-content>
+					</ion-nav-view>
+				 </ion-tab>
+				 <ion-tab title="下架商品"   on-select="getun()" >
+					<ion-nav-view name="unsale-tab" >
+						<ion-content class="content1">
+							<ion-list can-swipe="true">
+								<ion-item ng-repeat="goods in ungoods" type="item-text-wrap" href="#/tab/sale/{{goods.goods_id}}" class="item-thumbnail-left">
+									<img ng-src="{{goods.pic_url_list[0]}}@200w_200h_0e_1l">
+									<h2>{{goods.description}}</h2>
+									<p><span ng-if="!goods.promotion_price"><a ng-if="goods.price">￥</a>{{goods.price}}</span><span ng-if="goods.promotion_price">￥{{goods.promotion_price}}</span></p>
+									<ion-option-button class="button button-royal button-large" ng-click="onsaleit(goods.goods_id)">　上架　</ion-option-button>
+									<ion-option-button class="button button-assertive button-large" ng-click="deletegood(goods.goods_id)">　删除　</ion-option-button>
+								</ion-item>
+								
+							</ion-list>	
+						</ion-content>
+					</ion-nav-view>
+				 </ion-tab>
+	</ion-tabs>	
+
+</ion-view>

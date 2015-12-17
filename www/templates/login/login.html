@@ -1,0 +1,28 @@
+﻿<ion-view title="喵喵熊商家版">
+    <ion-content>
+        <div class="list text-center">
+		  <img ng-src="img/login_03.png" class="list"></img>
+		  <form name="sub" class="padding">
+            <label class="item item-input">
+			  <i class="placeholder-icon ion-ios-person-outline"></i>
+             
+              <input type="text" ng-model="user.account" ng-required="true" placeholder="账号">
+            </label>
+            <label class="item item-input">
+			  <i class="placeholder-icon ion-ios-unlocked-outline"></i>	
+            
+              <input type="password" ng-model="user.password" ng-required="true" placeholder="密码">
+            </label>
+			</form>
+          </div>
+          <div class="padding">
+            <button class="button button-block button-mtweb" ng-click="signIn(user)" ng-disabled="sub.$invalid">
+              登录
+            </button>
+            <p class="text-center">
+              <a href="#/forgotpassword" style="text-decoration:none;font-size:18sp;">找回密码</a>
+            </p>
+			<p class="text-center assertive">{{tip}}</p>
+        </div>
+    </ion-content>
+</ion-view>

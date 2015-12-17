@@ -1,0 +1,72 @@
+﻿<ion-view title="编辑商品" >
+	<ion-nav-buttons side="right">
+      <a style="cursor:pointer;margin-top:10px;" ng-click="submit()">
+         保存
+      </a>
+    </ion-nav-buttons>
+    <ion-content>
+		<div class="list">
+			<label class="item item-input item-select">
+				<span class="input-label">
+					  商品类别(必选)
+				</span>
+				 
+					<select ng-model="cate" ng-required="true"   ng-options="cate.name for cate in category">	
+						<option value=""  selected>{{catename}}</option>
+					</select>
+
+			</label>
+			<label class="item item-input item-select">
+				<span class="input-label">
+					   　
+				</span>
+				<select ng-model="data.category_id" ng-required="true"  ng-options="childcate.id as childcate.name for childcate in cate.son">
+					<option value="" selected>{{childcatename}}</option>
+					</option>
+				</select>
+			</label>
+			<label class="item item-input">
+				<span class="input-label">商品名称(必填)</span>
+				<input type="text" ng-model="data.description" ng-required="true">
+			</label> 
+		</div>
+		<div class="list">
+			<label class="item item-input">
+				<span class="input-label">售价</span>
+				<input type="text" ng-model="data.price">
+				<span style="margin-right:1em">元</span>
+			</label> 
+			 
+		 
+			<span class="item item-input">
+				<span class="input-label">促销价</span>
+				<input type="text" ng-model="data.promotion_price">
+				<span style="margin-right:1em">元</span> 
+			</span> 
+			
+		</div>
+		<div class="item padding row">
+			<button class="button button-royal col col-50" ng-click="takePhote()">拍照</button>
+			<button class="button button-royal col col-50" ng-click="pickImage()">相册</button>
+		</div>
+		<div class="item list" ng-if="data.pic_url_list.length!=0" ng-repeat="img in imglist track by $index">
+		<img ng-src="{{img}}@400w_200h_1e_1l_1c" class="item" style="width:100%;height:200px;"></img>
+		<i class="icon ion-ios-trash-outline" ng-click="delpic($index)" style="z-index:999;right:35px;font-size:50px;position: absolute;top: 85px;"></i>
+		</div>
+		<div class="item">	
+			商品描述
+			<label class="item item-input item-stacked-label">
+			
+				<textarea  ng-model="data.detail"></textarea>
+			 </label>
+		</div>
+		<div class="item">
+			商品备注
+			 <label class="item item-input item-stacked-label">
+				<textarea  ng-model="data.remark"></textarea>
+			 </label>
+		</div>
+	</ion-content>
+
+	
+</ion-view>

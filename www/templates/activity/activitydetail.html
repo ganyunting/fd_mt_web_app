@@ -1,0 +1,12 @@
+﻿<ion-view title="活动详情">
+        <ion-content padding="true">
+			<ion-item class="list">
+				<h1 class="text-center">{{acts[index].act_title}}</h1>		 
+				<div class="list" ng-repeat="action in act_content.sections">
+					<img ng-src="{{action[1]}}@500w_280h_1l_1c_1e" style="width:100%;height:50%;" ng-if="action[0]==2"></img>
+					<p ng-if="action[0]==1">{{action[1]}}</p>	 
+				</div>
+				<p>活动时间:{{acts[index].begin_time |substr10}}至{{acts[index].end_time |substr10}}</p>
+			</ion-item>
+        </ion-content>
+</ion-view>

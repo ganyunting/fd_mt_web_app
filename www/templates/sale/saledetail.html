@@ -1,0 +1,30 @@
+﻿<ion-view title="商品详情">
+	<ion-nav-buttons side="right">
+      <a style="cursor:pointer;margin-top:10px;"   ng-click="editgoods(goods.goods_id)" >
+         编辑
+      </a>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+		<ion-list>
+			<ion-item>
+				<ion-slide-box show-pager="true" auto-play="true"  does-continue="true" slide-interval="4000">
+					<ion-slide ng-repeat="gpic in gpic">
+					  <img ng-src="{{gpic}}@300w_200h_0e_1l" style="width:100%;"></img>
+					</ion-slide>	
+				</ion-slide-box>
+			</ion-item>
+			<ion-item>
+				<h2>{{goods.description}}</h2>
+				<p><del><a ng-if="goods.price">￥</a>{{goods.price}}</del><span ng-if="goods.promotion_price" style="font-size:18px;color:#FF590D">￥{{goods.promotion_price}}</span></p>
+			</ion-item>
+			<ion-item>
+				<h3 >商品描述</h3>
+				<p>{{goods.detail}}</p>
+			</ion-item>
+			<ion-item>
+				<h3 >商品备注</h3>
+				<p>{{goods.remark}}</p>
+			</ion-item>
+		</ion-list>	
+    </ion-content>
+</ion-view>

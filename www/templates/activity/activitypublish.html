@@ -1,0 +1,51 @@
+﻿<ion-view title="发布活动">
+	<ion-nav-buttons side="right">
+      <a style="cursor:pointer;margin-top:10px;" ng-click="actsubmit()">
+         提交
+      </a>
+    </ion-nav-buttons>	
+    <ion-content padding="true">
+		<ion-list>
+			<ion-item class="item item-input">
+			<span class="input-label">活动主题</span>
+			 <input type="text" ng-model="user.act_title"></input>
+			</ion-item>
+			<ion-item class="item item-icon-right" ng-repeat="action in act_content.sections">
+				<img ng-src="{{action[1]}}@500w_200h_1e_0l_1c" ng-if="action[0]==2" style="width:100%;"></img>
+				<textarea ng-model="action[1]" class="item" ng-if="action[0]==1" style="width:100%;"></textarea>
+				<i class="icon ion-ios-trash-outline" ng-click="delcontent($index)"></i>	
+			</ion-item>
+			 
+			 
+			<ion-item>
+				<div>
+					<p class="text-center">请选择输入内容</p>
+					<div class="row">
+						<div class="col" style="cursor:pointer;" class="text-center" ng-click="addimg($event)">
+							<p>图片</p>
+							<p><img ng-src="img/Activity-publish_03.png"</p>
+						</div>
+						<div class="col" style="cursor:pointer;" class="text-center" ng-click="addtext()">
+							<p>文字</p>
+							<p><img ng-src="img/Activity-publish_05.png"</p>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="list"> 
+					<div class="item" ng-repeat="img in images_list"> <img ng-src="{{img}}@500w_200h_1l_1e_1c" width="100%"> </div> 
+				</div>
+			</ion-item>
+			<ion-item class="item item-input item-icon-right">
+				<span class="input-label">开始时间</span>
+				<input type="date" ng-model="user.begintime">
+				<i class="icon ion-ios-arrow-forward" ></i></input>
+			</ion-item>
+			<ion-item class="item item-input item-icon-right">	
+					<span class="input-label">结束时间</span> 
+					<input  type="date" ng-model="user.endtime">
+					<i class="icon ion-ios-arrow-forward" ></i></input>
+			</ion-item>
+		</ion-list>	
+    </ion-content>
+</ion-view>

@@ -1,0 +1,200 @@
+/* Empty. Add your own CSS if you like */
+body{background-color:#eee}
+.bar-mtweb{border-color:#56D585;background-color:#56D585;color:#fff}
+.button-mtweb{border-color:#56D585;background-color:#56D585;color:#fff}
+.button-mtweb.activated{border-color:#56D585;background-color:#56D585;}
+.button-mtweb:hover{color:#fff;text-decoration:none;}
+.bgcolor{background-color:#EEEEEE}
+.fright{float:right}
+.content1{margin-bottom:45px;}
+.me-infofav{width:28px;position: absolute;margin-top:-3px;}
+.me-infofansnum{color:red;position: absolute;margin-left: 30px;}
+.main-nav ul {
+
+display         : -webkit-flex;
+  display         : -ms-flexbox;
+  display         : flex;
+  width           : 100%;
+  height          : 80px;
+  background-color: #fff;
+  margin          : 0 auto;
+  width           : 100%;
+  white-space     : nowrap;
+  margin-bottom: 20px;
+}
+
+.main-nav ul li {
+  -webkit-flex-grow      : 1;
+  -ms-flex-positive      : 1;
+  flex-grow              : 1;
+  -webkit-flex-shrink    : 1;
+  -ms-flex-negative      : 1;
+  flex-shrink            : 1;
+  -webkit-flex-basis     : 100%;
+  -ms-flex-preferred-size: 100%;
+  flex-basis             : 100%;
+  text-align             : center;
+  line-height            : 40px;
+  height                 : 80px;
+  margin                 : 0;
+  text-transform         : uppercase;
+  letter-spacing         : .8px;
+  border-bottom          : 1px solid #ddd;
+  cursor                 : pointer;
+}
+
+.main-nav ul li a, .main-nav ul li div {
+  color  : #444;
+  font-size: 18px;
+  display: block;
+  width  : 100%;
+  height : 100%;
+  font-family: latobold;
+}
+
+
+.main-nav ul li.active {
+  border-bottom: 1px solid #56D585;
+}
+.slider {
+   height:50%;
+}
+.slider-slide {
+ 
+}
+
+
+.platform-android .action-sheet-backdrop {
+  -webkit-transition: background-color 150ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.platform-android .action-sheet-backdrop.active {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.platform-android .action-sheet-wrapper {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  -webkit-transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  transition: all cubic-bezier(0.36, 0.66, 0.04, 1) 500ms;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.platform-android .action-sheet-up {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.platform-android .action-sheet {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: auto;
+  z-index: 11;
+  overflow: hidden;
+}
+
+.platform-android .action-sheet .button {
+  display: block;
+  padding: 1px;
+  width: 100%;
+  border-radius: 0;
+  border-color: #d1d3d6;
+  background-color: transparent;
+  color: #007aff;
+  font-size: 21px;
+  text-align: center;
+}
+
+.platform-android .action-sheet .button:hover {
+  color: #007aff;
+}
+
+.platform-android .action-sheet .button.destructive {
+  color: #ff3b30;
+}
+
+.platform-android .action-sheet .button.destructive:hover {
+  color: #ff3b30;
+}
+
+.platform-android .action-sheet .button.active, .action-sheet .button.activated {
+  box-shadow: none;
+  border-color: #d1d3d6;
+  color: #007aff;
+  background: #e4e5e7;
+}
+
+.platform-android .action-sheet-has-icons .icon {
+  position: absolute;
+  left: 16px;
+}
+
+.platform-android .action-sheet-title {
+  padding: 16px;
+  color: #8f8f8f;
+  text-align: center;
+  font-size: 13px;
+  width:100%;
+}
+
+.platform-android .action-sheet-group {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.platform-android .action-sheet-group .button {
+  border-width: 1px 0px 0px 0px;
+}
+
+.platform-android .action-sheet-group .button:first-child:last-child {
+  border-width: 0;
+}
+
+.platform-android .action-sheet-options {
+  background: #f1f2f3;
+}
+
+.platform-android .action-sheet-cancel .button {
+  font-weight: 500;
+}
+
+.platform-android .action-sheet-open {
+  pointer-events: none;
+}
+
+.platform-android .action-sheet-open.modal-open .modal {
+  pointer-events: none;
+}
+
+.platform-android .action-sheet-open .action-sheet-backdrop {
+  pointer-events: auto;
+}
+.popover {
+    height: auto !important;
+	text-align:center;
+	margin-left: auto;
+    margin-right: auto;
+}
+.popover ion-header-bar {
+    position: relative;
+}
+.popover ion-content {
+    top: 0;
+    position: relative;
+}

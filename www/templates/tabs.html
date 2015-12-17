@@ -1,0 +1,17 @@
+﻿<ion-view>
+        <ion-tabs class="tabs-icon-bottom tabs-mtweb" ng-controller="TabsCtrl" ng-class="{'tabs-item-hide': $root.hideTabs}">
+
+          <ion-tab title="商品" icon="ion-home" href="#/tab/sale">
+            <ion-nav-view name="sale-tab"></ion-nav-view>
+          </ion-tab>
+
+          <ion-tab title="活动" icon="ion-star" href="#/tab/activity">
+            <ion-nav-view name="activity-tab"></ion-nav-view>
+          </ion-tab>
+		  
+		  <ion-tab title="我的" icon="ion-person" href="#/tab/me">
+			<ion-nav-view name="me-tab"></ion-nav-view>
+          </ion-tab>
+
+        </ion-tabs>
+</ion-view>

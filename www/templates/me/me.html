@@ -1,0 +1,36 @@
+﻿<ion-view view-title="我的">
+  <ion-content class="padding">
+    <div class="list">
+	<a class="item item-thumbnail-left item-icon-right" href="#/tab/me/me-detail">
+	<img ng-src='{{spic}}'></img>
+	<h2>{{brand_name}}</h2>
+	<p>{{pname}}</p>
+	<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	<a class="item item-icon-right">
+	<i>二维码</i>
+	<qrcode data="{{qrcode}}" size="80" class="icon"></qrcode>
+	</a>
+	</div>
+	
+	<div class="list">
+	<a class="item item-icon-right" href="#/tab/me/me-shopinfo">
+	<i>店铺信息</i>
+
+	<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	<a class="item item-icon-right" href="#/tab/me/me-servicestatus">
+	<i>服务状态</i>
+	<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	<a class="item item-icon-right" href="#/tab/me/me-subscribeservice">
+	<i >订阅服务</i>
+	<i class="icon ion-ios-arrow-right"></i>
+	</a>
+	</div>
+	
+	<div class="list">
+	<button class="button button-assertive button-block" ng-click="logout()">切换账号</button>
+	</div>
+  </ion-content>
+</ion-view>
